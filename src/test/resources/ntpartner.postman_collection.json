@@ -8,34 +8,81 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/v1/partner?page=0&size=2",
+			"name": "Get Partner",
 			"request": {
-				"url": "http://localhost:8080/v1/partner?page=1&size=2",
+				"url": "http://localhost:8081/v1/partner",
 				"method": "GET",
-				"header": [],
-				"body": {},
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"streetNo\": \"18/1\",\n  \"zipCode\": \"70771\",\n  \"city\": \"Leinfelden-Echterdingen\"\n}"
+				},
 				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/v1/partner?page=0&size=2",
+			"name": "Create Partner",
 			"request": {
-				"url": "http://localhost:8080/v1/address",
-				"method": "GET",
-				"header": [],
-				"body": {},
+				"url": "http://localhost:8081/v1/partner",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Peter Kutschera\",\n  \"address\" : {\n  \t\"street\" : \"Wernerstrasse\",\n\t\"streetNo\" : \"45\",\n\t\"zipCode\" : \"71636\",\n\t\"city\" : \"Ludwigsburg\"\n  }\n}"
+				},
 				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/v1/partner?page=0&size=2",
+			"name": "Create Partner asynchronously",
 			"request": {
-				"url": "http://localhost:8080/v1/address",
-				"method": "GET",
-				"header": [],
-				"body": {},
+				"url": "http://localhost:8081/v1/partner/async",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Petra Meyer\",\n  \"address\" : {\n  \t\"street\" : \"Wernerstrasse\",\n\t\"streetNo\" : \"45\",\n\t\"zipCode\" : \"71636\",\n\t\"city\" : \"Ludwigsburg\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Partner",
+			"request": {
+				"url": "http://localhost:8081/v1/partner/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": ""
 			},
 			"response": []
