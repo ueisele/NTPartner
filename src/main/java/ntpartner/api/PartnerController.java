@@ -1,6 +1,6 @@
 package ntpartner.api;
 
-import ntpartner.api.config.RabbitMqConfiguration;
+import ntpartner.api.config.RabbitMqDevelopmentConfiguration;
 import ntpartner.api.resource.PartnerResource;
 import ntpartner.api.resource.PartnerResourceAssembler;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -69,7 +69,7 @@ public class PartnerController {
     @ResponseStatus( HttpStatus.CREATED )
     public void createPartnerAsync(@RequestBody PartnerResource partnerResource) {
         Partner partner = partnerResource.toPartner();
-        rabbitTemplate.convertAndSend(RabbitMqConfiguration.queueName, partner);
+        rabbitTemplate.convertAndSend(RabbitMqDevelopmentConfiguration.queueName, partner);
     }
 
 

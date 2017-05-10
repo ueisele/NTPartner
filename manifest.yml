@@ -1,0 +1,12 @@
+---
+applications:
+- name: ntpartner
+  memory: 1G
+  host: ntpartner
+  buildpack: java_buildpack
+  path: target/backend-exec.jar
+  env:
+    TZ: 'Europe/Berlin'
+  services:
+  - my_mysql
+  - my_rabbitmq
