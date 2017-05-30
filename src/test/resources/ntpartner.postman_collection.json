@@ -206,26 +206,6 @@
 				"description": ""
 			},
 			"response": []
-		},
-		{
-			"name": "Get Partner (Openshift)",
-			"request": {
-				"url": "http://ntpartner-ntpartner.192.168.99.100.nip.io/v1/partner",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"streetNo\": \"18/1\",\n  \"zipCode\": \"70771\",\n  \"city\": \"Leinfelden-Echterdingen\"\n}"
-				},
-				"description": ""
-			},
-			"response": []
 		}
 	]
 }
