@@ -3,7 +3,7 @@ applications:
 - name: ntpartner
   memory: 1G
   host: ntpartner
-  buildpack: java_buildpack
+  buildpack: https://github.com/cloudfoundry/java-buildpack#v3.13
   path: target/backend-exec.jar
   env:
     TZ: 'Europe/Berlin'

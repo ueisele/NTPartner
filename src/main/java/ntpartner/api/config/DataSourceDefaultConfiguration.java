@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @Profile("!cloud")
-public class DataSourceDevelopmentConfiguration {
+public class DataSourceDefaultConfiguration {
     @Bean
     @Primary
     @ConfigurationProperties(prefix = "spring.datasource")

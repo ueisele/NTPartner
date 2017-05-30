@@ -35,7 +35,7 @@ public class RabbitMqCloudConfiguration extends AbstractCloudConfig {
     }
 
     @Bean
-    public ConnectionFactory rabbitFactory() {
+public ConnectionFactory rabbitFactory() {
         return connectionFactory().rabbitConnectionFactory();
     }
 

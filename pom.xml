@@ -76,14 +76,14 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+<!--
 	<scm>
 		<url>https://github.com/pkutschera/NTPartner.git</url>
 		<connection>scm:git:git@github.com:Educama/Showcase.git</connection>
 		<developerConnection>scm:git:git@github.com:Educama/Showcase.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
-
+-->
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
