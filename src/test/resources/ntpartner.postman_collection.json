@@ -86,6 +86,146 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "Get Partner (pcf dev)",
+			"request": {
+				"url": "http://lntpartner.local.pcfdev.io/v1/partner",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"streetNo\": \"18/1\",\n  \"zipCode\": \"70771\",\n  \"city\": \"Leinfelden-Echterdingen\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Partner (pcf dev)",
+			"request": {
+				"url": "http://ntpartner.local.pcfdev.io/v1/partner",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Peter Kutschera\",\n  \"address\" : {\n  \t\"street\" : \"Wernerstrasse\",\n\t\"streetNo\" : \"45\",\n\t\"zipCode\" : \"71636\",\n\t\"city\" : \"Ludwigsburg\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Partner (bluemix)",
+			"request": {
+				"url": "http://ntpartner.mybluemix.net/v1/partner",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"streetNo\": \"18/1\",\n  \"zipCode\": \"70771\",\n  \"city\": \"Leinfelden-Echterdingen\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Partner (bluemix)",
+			"request": {
+				"url": "http://ntpartner.mybluemix.net/v1/partner",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Peter Kutschera\",\n  \"address\" : {\n  \t\"street\" : \"Wernerstrasse\",\n\t\"streetNo\" : \"45\",\n\t\"zipCode\" : \"71636\",\n\t\"city\" : \"Ludwigsburg\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Partner asynchronously (pcf dev)",
+			"request": {
+				"url": "http://ntpartner.local.pcfdev.io/v1/partner/async",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Petra Meyer\",\n  \"address\" : {\n  \t\"street\" : \"Wernerstrasse\",\n\t\"streetNo\" : \"45\",\n\t\"zipCode\" : \"71636\",\n\t\"city\" : \"Ludwigsburg\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Partner asynchronously (bluemix)",
+			"request": {
+				"url": "http://ntpartner.mybluemix.net/v1/partner/async",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Petra Meyer\",\n  \"address\" : {\n  \t\"street\" : \"Wernerstrasse\",\n\t\"streetNo\" : \"45\",\n\t\"zipCode\" : \"71636\",\n\t\"city\" : \"Ludwigsburg\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Partner (Openshift)",
+			"request": {
+				"url": "http://ntpartner-ntpartner.192.168.99.100.nip.io/v1/partner",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"streetNo\": \"18/1\",\n  \"zipCode\": \"70771\",\n  \"city\": \"Leinfelden-Echterdingen\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
