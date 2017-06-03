@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS Address (
+  id       INT(11)     NOT NULL AUTO_INCREMENT,
+  street   VARCHAR(80) NOT NULL,
+  streetNo VARCHAR(40) NOT NULL,
+  zipCode  VARCHAR(40) NOT NULL,
+  city     VARCHAR(80) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS Person (
+  id        INT(11)     NOT NULL AUTO_INCREMENT,
+  firstname VARCHAR(80) NOT NULL,
+  lastname  VARCHAR(80) NOT NULL,
+  idAddress INT(11),
+  PRIMARY KEY (id),
+  FOREIGN KEY (idAddress) REFERENCES Address (id)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
+);

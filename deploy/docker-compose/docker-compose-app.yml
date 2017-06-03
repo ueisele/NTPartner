@@ -1,0 +1,39 @@
+---
+version: '3'
+services:
+
+  ntpartner-backend.setup-mysql:
+    image: ntpartner/ntpartner-backend.setup-mysql:${VERSION_APP}
+    labels:
+      de.nt.cloud.group: ntpartner
+      de.nt.cloud.project: ntpartner-backend
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbuser
+      MYSQL_DATABASE: ntpartner
+    depends_on:
+      - mysql
+      - rabbitmq
+
+  ntpartner-backend:
+    image: ntpartner/ntpartner-backend:${VERSION_APP}
+    labels:
+      de.nt.cloud.group: ntpartner
+      de.nt.cloud.project: ntpartner-backend
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_DATABASE: ntpartner
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbuser
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_VHOST: ntpartner
+      RABBITMQ_USER: mquser
+      RABBITMQ_PASSWORD: mquser
+    depends_on:
+      - mysql
+      - rabbitmq
+
+networks:
+  default:
+...

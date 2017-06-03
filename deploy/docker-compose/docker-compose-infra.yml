@@ -1,0 +1,30 @@
+---
+version: '3'
+services:
+
+  mysql:
+    image: mysql:5.7
+    labels:
+      de.nt.cloud.group: ntpartner
+      de.nt.cloud.name: ntpartner-backend
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ntpartner
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: dbuser
+    volumes:
+      - /var/lib/mysql
+
+  rabbitmq:
+    image: rabbitmq:3.6-management
+    labels:
+      de.nt.cloud.group: ntpartner
+      de.nt.cloud.name: ntpartner-backend
+    environment:
+      RABBITMQ_DEFAULT_USER: mquser
+      RABBITMQ_DEFAULT_PASS: mquser
+      RABBITMQ_DEFAULT_VHOST: ntpartner
+
+networks:
+  default:
+...

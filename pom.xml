@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ntpartner</groupId>
-	<artifactId>backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>ntpartner-backend</artifactId>
+	<version>${describe}</version>
 	<packaging>jar</packaging>
 
 	<description>Backend of NtPartner</description>
@@ -14,13 +14,19 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.3.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 	</properties>
+
+	<scm>
+		<url>https://github.com/ueisele/NTPartner.git</url>
+		<connection>scm:git:git@github.com:ueisele/NTPartner.git</connection>
+		<developerConnection>scm:git:git@github.com:ueisele/NTPartner.git</developerConnection>
+		<tag>${project.version}</tag>
+	</scm>
 
 	<dependencies>
 		<dependency>
@@ -76,14 +82,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-<!--
-	<scm>
-		<url>https://github.com/pkutschera/NTPartner.git</url>
-		<connection>scm:git:git@github.com:Educama/Showcase.git</connection>
-		<developerConnection>scm:git:git@github.com:Educama/Showcase.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
--->
+
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
@@ -98,16 +97,103 @@
 					<classifier>exec</classifier>
 				</configuration>
 			</plugin>
-			<!-- Plugin to create releases: Use ./mvnw release:clean release:prepare 
-				-DpushChanges=false to create a release. -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
-				<configuration>
-					<tagNameFormat>v@{project.version}</tagNameFormat>
-				</configuration>
+				<groupId>com.lukegb.mojo</groupId>
+				<artifactId>gitdescribe-maven-plugin</artifactId>
+				<version>3.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>gitdescribe</goal>
+						</goals>
+						<id>git-describe</id>
+						<phase>initialize</phase>
+						<configuration>
+							<extraArguments>
+								<param>--tags</param>
+							</extraArguments>
+							<setReactorProjectsProperties>true</setReactorProjectsProperties>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
+            <!--
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<id>copy-resources-service</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/dist/service</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/docker/service</directory>
+								</resource>
+								<resource>
+									<directory>${basedir}/target</directory>
+									<includes>
+										<include>*-exec.jar</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			-->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.14</version>
+                <executions>
+                    <execution>
+                        <id>build-image-service</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                        <configuration>
+                            <imageName>${project.groupId}/${project.artifactId}</imageName>
+                            <imageTags>
+                                <imageTag>${project.version}</imageTag>
+                                <imageTag>latest</imageTag>
+                            </imageTags>
+                            <forceTags>true</forceTags>
+                            <dockerDirectory>src/main/docker/service</dockerDirectory>
+                            <buildDirectory>${project.build.directory}/dist/service</buildDirectory>
+                            <resources>
+                                <resource>
+                                    <targetPath>/</targetPath>
+                                    <directory>${project.build.directory}</directory>
+                                    <include>${project.build.finalName}-exec.jar</include>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>build-image-setup-mysql</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                        <configuration>
+                            <imageName>${project.groupId}/${project.artifactId}.setup-mysql</imageName>
+                            <imageTags>
+                                <imageTag>${project.version}</imageTag>
+                                <imageTag>latest</imageTag>
+                            </imageTags>
+                            <forceTags>true</forceTags>
+                            <dockerDirectory>src/main/docker/setup-mysql</dockerDirectory>
+                            <buildDirectory>${project.build.directory}/dist/setup-mysql</buildDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 		</plugins>
 	</build>
 </project>

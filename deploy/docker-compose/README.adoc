@@ -1,0 +1,23 @@
+= Docker-Compose Deployment
+
+Docker-Compose Deployment is based on `docker-compose`. It provides the required systems to run NTPartner backend, i.e. MySql and RabbitMQ.
+
+== Usage
+TIP: All commands are location-aware, i.e. you may run `deploy/docker-compose/up-infra.sh` with `$PWD` being the project root directory.
+
+`up-infra.sh`::
+    Starts the infrastructure environment. (Docker containers are created as needed) All systems will be empty.
+`up-app.sh`::
+    Initializes the environment for NTPartner backend , i.e. creates MySql tables and starts the service.
+`docker-ips.sh`::
+    Displays the IPs of the containers of the environment.
+`logs.sh <Service Name>?`::
+    Shows the logs of all or of the specified service.
+`down.sh`::
+    Stops the cluster and removes all resources (containers, network).
+`stop.sh`::
+    Stops the cluster, does not remove the cluster.
+`docker-compose-env.sh <docker-compose command>`::
+    Convenience command to run docker-compose command against this environment (e.g. ./docker-compose-env.sh ps).
+`run.sh`::
+    Convenience command that starts and initializes the environment, and deploys the services.
