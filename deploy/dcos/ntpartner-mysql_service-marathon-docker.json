@@ -1,0 +1,68 @@
+{
+  "id": "/ntpartner/mysql",
+  "instances": 1,
+  "cpus": 0.5,
+  "mem": 1024,
+  "container": {
+    "type": "DOCKER",
+    "volumes": [
+      {
+        "containerPath": "mysqldata",
+        "mode": "RW",
+        "persistent": {
+          "size": 1000
+        }
+      },
+      {
+        "containerPath": "/var/lib/mysql",
+        "hostPath": "mysqldata",
+        "mode": "RW"
+      }
+    ],
+    "docker": {
+      "image": "mysql:5.7",
+      "forcePullImage": false,
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 3306,
+          "hostPort": 0,
+          "protocol": "tcp",
+          "name": "ntpartnermysql-node",
+          "labels": {
+            "VIP_0": "/ntpartner/mysql:3306"
+          }
+        }
+      ]
+    }
+  },
+  "residency": {
+    "relaunchEscalationTimeoutSeconds": 10,
+    "taskLostBehavior": "WAIT_FOREVER"
+  },
+  "healthChecks": [
+    {
+      "portName": "ntpartnermysql-node",
+      "protocol": "TCP",
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 30,
+      "maxConsecutiveFailures": 3,
+      "ignoreHttp1xx": false
+    }
+  ],
+  "env": {
+    "MYSQL_ROOT_PASSWORD": "root",
+    "MYSQL_DATABASE": "ntpartner",
+    "MYSQL_USER": "dbuser",
+    "MYSQL_PASSWORD": "dbuser"
+  },
+  "labels": {
+    "de.nt.cloud.group": "ntpartner",
+    "de.nt.cloud.name": "ntpartner-mysql"
+  },
+  "upgradeStrategy": {
+    "minimumHealthCapacity": 0,
+    "maximumOverCapacity": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "/ntpartner/backend-setup-mysql",
+  "instances": 1,
+  "cpus": 0.2,
+  "mem": 512,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "ntpartner/ntpartner-backend.setup-mysql:latest",
+      "forcePullImage": true,
+      "network": "BRIDGE"
+    }
+  },
+  "env": {
+    "MYSQL_HOST": "	ntpartnermysql.marathon.l4lb.thisdcos.directory",
+    "MYSQL_DATABASE": "ntpartner",
+    "MYSQL_USER": "dbuser",
+    "MYSQL_PASSWORD": "dbuser"
+  },
+  "labels": {
+    "de.nt.cloud.group": "ntpartner",
+    "de.nt.cloud.name": "ntpartner-backend"
+  }
+}
