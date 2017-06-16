@@ -6,7 +6,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "ntpartner/ntpartner-backend:latest",
+      "image": "nexus3.marathon.l4lb.thisdcos.directory:5000/ntpartner/ntpartner-backend",
       "forcePullImage": true,
       "network": "BRIDGE",
       "portMappings": [
@@ -23,7 +23,7 @@
     }
   },
   "env": {
-    "MYSQL_HOST": "	ntpartnermysql.marathon.l4lb.thisdcos.directory",
+    "MYSQL_HOST": "ntpartnermysql.marathon.l4lb.thisdcos.directory",
     "MYSQL_DATABASE": "ntpartner",
     "MYSQL_USER": "dbuser",
     "MYSQL_PASSWORD": "dbuser",
@@ -60,5 +60,8 @@
       "httpStatusCodesForReady": [ 200, 302 ],
       "preserveLastResponse": true
     }
+  ],
+  "uris": [
+    "http://boot.dcos/docker/nexus3.marathon.l4lb.thisdcos.directory:5000/docker.tar.gz"
   ]
 }

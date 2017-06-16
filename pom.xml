@@ -117,35 +117,6 @@
 					</execution>
 				</executions>
 			</plugin>
-            <!--
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.2</version>
-				<executions>
-					<execution>
-						<id>copy-resources-service</id>
-						<phase>package</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/dist/service</outputDirectory>
-							<resources>
-								<resource>
-									<directory>src/main/docker/service</directory>
-								</resource>
-								<resource>
-									<directory>${basedir}/target</directory>
-									<includes>
-										<include>*-exec.jar</include>
-									</includes>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			-->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
