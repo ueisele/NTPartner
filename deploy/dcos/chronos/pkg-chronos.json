@@ -1,0 +1,29 @@
+{
+  "mesos": {
+    "master": "zk://zk-1.zk:2181,zk-2.zk:2181,zk-3.zk:2181,zk-4.zk:2181,zk-5.zk:2181/mesos"
+  },
+  "chronos": {
+    "id": "/chronos",
+    "instances": 1,
+    "cpus": 1,
+    "mem": 2458,
+    "jvm_opts": "-XX:+PrintCommandLineFlags -XX:+PrintGC -XX:+PrintGCCause -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -XX:+PrintGCApplicationConcurrentTime -XX:+PrintGCApplicationStoppedTime -XX:+PrintTenuringDistribution -XX:+PrintAdaptiveSizePolicy -Xmx2g -Xms2g -XX:+AlwaysPreTouch -Xss512k",
+    "decline-offer-duration": 5000,
+    "disable-after-failures": 0,
+    "failover-timeout": 604800,
+    "failure-retry": 60000,
+    "framework-name": "chronos",
+    "graphite-reporting-interval": 60,
+    "mesos-checkpoint": true,
+    "mesos-task-cpu": 0.1,
+    "mesos-task-disk": 256,
+    "mesos-task-mem": 128,
+    "min-revive-offers-interval": 5000,
+    "reconciliation-interval": 600,
+    "revive-offers-for-new-jobs": false,
+    "user": "root",
+    "zk-hosts": "zk-1.zk:2181,zk-2.zk:2181,zk-3.zk:2181,zk-4.zk:2181,zk-5.zk:2181",
+    "zk-path": "/chronos",
+    "zk-timeout": 10000
+  }
+}

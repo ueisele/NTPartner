@@ -1,0 +1,39 @@
+{
+  "name": "ntpartner.backend-setup-mysql",
+  "schedule": "R1//P",
+  "container": {
+    "type": "DOCKER",
+    "image": "nexus3.marathon.l4lb.thisdcos.directory:5000/ntpartner/ntpartner-backend.setup-mysql:latest",
+    "forcePullImage": true,
+    "network": "BRIDGE"
+  },
+  "shell": false,
+  "cpus": 0.5,
+  "mem": 512,
+  "environmentVariables": [
+    {
+      "name": "MYSQL_HOST",
+      "value": "ntpartnermysql.marathon.l4lb.thisdcos.directory"
+    },
+    {
+      "name": "MYSQL_DATABASE",
+      "value": "ntpartner"
+    },
+    {
+      "name": "MYSQL_USER",
+      "value": "dbuser"
+    },
+    {
+      "name": "MYSQL_PASSWORD",
+      "value": "dbuser"
+    }
+  ],
+  "fetch": [
+    {
+      "uri": "http://boot.dcos/docker/nexus3.marathon.l4lb.thisdcos.directory:5000/docker.tar.gz",
+      "cache": false,
+      "extract": true,
+      "executable": false
+    }
+  ]
+}

@@ -2,6 +2,7 @@
   "marathon-lb": {
     "name": "marathon-lb-external",
     "haproxy-group": "external",
+    "cpus": 1,
     "mem": 256
   }
 }

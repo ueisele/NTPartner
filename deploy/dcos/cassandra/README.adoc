@@ -1,0 +1,10 @@
+= Cassandra Package
+
+== Uninstall
+
+* dcos package uninstall cassandra
+* Login to Master Node and run:
+
+    docker run mesosphere/janitor /janitor.py -r cassandra-role -p cassandra-principal -z dcos-service-cassandra
+
+For more information see: https://docs.mesosphere.com/service-docs/cassandra/v1.0.25-3.0.10/uninstall/

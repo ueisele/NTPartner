@@ -35,6 +35,7 @@
   "labels": {
     "HAPROXY_GROUP": "external",
     "HAPROXY_0_VHOST": "ntpartner.nt.de",
+    "HAPROXY_0_PORT": "8081",
     "de.nt.cloud.group": "ntpartner",
     "de.nt.cloud.name": "ntpartner-backend"
   },
