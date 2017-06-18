@@ -1,0 +1,58 @@
+= References
+
+== DC/OS
+
+* Components: https://dcos.io/docs/1.9/overview/architecture/components/
+
+=== Components
+
+* https://zookeeper.apache.org/
+* http://mesos.apache.org/
+* https://github.com/mesosphere/mesos-dns
+* https://github.com/dcos/spartan
+* https://github.com/soabase/exhibitor/wiki
+* https://github.com/dcos/dcos/tree/master/packages/adminrouter/extra/src/
+* https://github.com/dcos/dcos-diagnostics
+* https://github.com/dcos/cosmos
+* https://github.com/dcos/dcos-oauth
+* https://mesosphere.github.io/marathon/
+* https://github.com/dcos/metronome
+* https://github.com/spotify/docker-gc
+* https://github.com/dcos/navstar
+* https://github.com/codedellemc/rexray
+
+== Mesos
+
+* http://mesos.apache.org
+* http://mesos.apache.org/documentation/latest/frameworks/
+
+=== Frameworks
+
+* Docker-Compose Mesos Framework: https://github.com/paypal/dce-go
+
+=== Platforms
+
+* Gestalt Framework: https://github.com/GalacticFog/gestalt-dcos
+* Vamp: http://vamp.io/
+
+== API Gateway
+
+* https://getkong.org/about/
+
+= Documentation
+
+== Serverless Computing
+
+* https://mesosphere.com/blog/2016/07/20/serverless-computing-dcos-galactic-fog/
+
+== Mesos
+
+=== Network
+
+* Mesos-DNS: https://dcos.io/docs/1.9/networking/mesos-dns/
+* Service-Naming: https://docs.mesosphere.com/1.9/networking/mesos-dns/service-naming/
+* Load Balancing and VIPs: https://dcos.io/docs/1.9/networking/load-balancing-vips/
+
+=== Jobs
+
+* Chronos: https://mesos.github.io/chronos/docs/api.html#adding-a-docker-job

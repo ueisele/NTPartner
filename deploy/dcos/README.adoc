@@ -1,0 +1,10 @@
+= DC/OS
+
+* Components: https://dcos.io/docs/1.9/overview/architecture/components/
+
+== Vagrant
+
+* DC/OS: http://m1.dcos
+* Mesos: http://m1.dcos/mesos/
+* Marathon: http://m1.dcos:8080
+* Exhibitor: http://m1.dcos/exhibitor

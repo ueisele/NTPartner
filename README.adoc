@@ -1,0 +1,10 @@
+= NTPartner Backend
+
+Forked from: https://github.com/pkutschera/NTPartner
+
+NovaTec Project Site: https://confluence.novatec-gmbh.de/display/INS/Projekt+1
+
+== SetUp
+
+see: https://github.com/JonasGrundler/NTPartner
+
