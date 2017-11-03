@@ -1,10 +1,30 @@
-= NTPartner Backend
+= Getting Started with Apache Mesos and Mesosphere DC/OS
 
-Forked from: https://github.com/pkutschera/NTPartner
+== Overview about Apache Mesos and Mesosphere DC/OS
 
-NovaTec Project Site: https://confluence.novatec-gmbh.de/display/INS/Projekt+1
+. Abgrenzung der beiden Produkte zueinander.
+. Kurze Erklärung der Produkte und Erklärung relevanter Begriffe.
+. Verweis auf bereits existierende ausführliche Dokumentation.
 
-== SetUp
+== Running Mesosphere DC/OS on your local environment
 
-see: https://github.com/JonasGrundler/NTPartner
+. Kurze Beschreibung zum starten von DC/OS auf dem eigenen Rechner.
+. Wiederum im wesentlichen der Verweis auf die existierende Dokumentation.
 
+== Deploying an example application on Mesosphere DC/OS
+
+. Die Beispielanwendung NTPartner und deren erforderliche Infrastruktur-Komponenten kurz erklären.
+. Beschreibung wie die Anwendung in DC/OS deployed werden kann. Dies geschiet anhand der bereits vorbereiteten Deployment-Skripte.
+. Erläuterung wie auf die Anwendung vom eigenen Rechner aus zugegriffen werden kann.
+
+== A closer look into Mesosphere DC/OS
+
+. Erklärung was tatsächlich passiert wenn die Beispielanwendung in DC/OS deployed wird und welche Komponenten daran wie beteiligt sind.
+
+== Conclusion
+
+. Meinung dazu, wie DC/OS für den Betrieb von Anwendungen geeigent ist.
+
+== Prospect
+
+. Auflistung der Themen, welche hier nicht behandelt wurden.

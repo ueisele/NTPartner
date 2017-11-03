@@ -8,3 +8,7 @@
 * Mesos: http://m1.dcos/mesos/
 * Marathon: http://m1.dcos:8080
 * Exhibitor: http://m1.dcos/exhibitor
+
+== Setup
+
+see: https://github.com/JonasGrundler/NTPartner
