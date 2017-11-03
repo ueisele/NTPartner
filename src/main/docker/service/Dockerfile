@@ -1,4 +1,4 @@
-FROM openjdk:8-jre
+FROM openjdk:9-jre-slim
 
 EXPOSE 8081
 

@@ -1,11 +1,8 @@
 package ntpartner.model;
 
 import javax.persistence.Embeddable;
-
-import org.hibernate.validator.constraints.NotEmpty;
-
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
-
 
 @Embeddable
 public class Name implements Serializable {

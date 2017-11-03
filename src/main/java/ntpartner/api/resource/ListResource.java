@@ -1,8 +1,8 @@
 package ntpartner.api.resource;
 
-import java.util.Collection;
-
 import org.springframework.hateoas.ResourceSupport;
+
+import java.util.Collection;
 
 public class ListResource<T> extends ResourceSupport {
 	private Collection<T> list;

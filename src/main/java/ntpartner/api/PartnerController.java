@@ -1,19 +1,18 @@
 package ntpartner.api;
 
 import ntpartner.api.config.RabbitMqDevelopmentConfiguration;
+import ntpartner.api.resource.ListResource;
+import ntpartner.api.resource.PartnerListResourceAssembler;
 import ntpartner.api.resource.PartnerResource;
 import ntpartner.api.resource.PartnerResourceAssembler;
+import ntpartner.boundary.PartnerBoundaryService;
+import ntpartner.model.Partner;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import ntpartner.api.resource.ListResource;
-import ntpartner.api.resource.PartnerListResourceAssembler;
-import ntpartner.boundary.PartnerBoundaryService;
-import ntpartner.model.Partner;
 
 /**
  * REST-Service to access Partner resources

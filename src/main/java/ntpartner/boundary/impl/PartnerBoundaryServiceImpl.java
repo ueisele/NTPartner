@@ -1,9 +1,6 @@
 package ntpartner.boundary.impl;
 
-import java.util.List;
-
 import ntpartner.boundary.PartnerBoundaryService;
-import ntpartner.model.Address;
 import ntpartner.model.Partner;
 import ntpartner.repository.PartnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +38,7 @@ public class PartnerBoundaryServiceImpl implements PartnerBoundaryService {
 
 	@Override
 	public void deletePartner(Long id) {
-		partnerRepository.delete(id);
+		partnerRepository.deleteById(id);
 	}
 
 }

@@ -1,14 +1,13 @@
 package ntpartner.api.resource;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
+import ntpartner.api.PartnerController;
+import ntpartner.common.PageLinks;
 import ntpartner.model.Partner;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
-import ntpartner.api.PartnerController;
-import ntpartner.common.PageLinks;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class PartnerListResourceAssembler {

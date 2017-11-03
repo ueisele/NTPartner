@@ -1,14 +1,10 @@
 package ntpartner.model;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.data.jpa.domain.AbstractPersistable;
-import org.springframework.hateoas.Identifiable;
 
+import javax.persistence.Embeddable;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 /**

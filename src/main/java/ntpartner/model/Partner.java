@@ -1,16 +1,12 @@
 package ntpartner.model;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.hateoas.Identifiable;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
 import java.io.Serializable;
 
 /**

@@ -3,9 +3,6 @@ package ntpartner.api.resource;
 import ntpartner.model.Partner;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 
-import ntpartner.api.PartnerController;
-import org.springframework.stereotype.Component;
-
 public class PartnerResourceAssembler extends ResourceAssemblerSupport<Partner, PartnerResource> {
 
 	public PartnerResourceAssembler(Class<?> controllerClass, Class<PartnerResource> resourceType) {

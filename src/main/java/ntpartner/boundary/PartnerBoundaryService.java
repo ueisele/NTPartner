@@ -1,6 +1,5 @@
 package ntpartner.boundary;
 
-import ntpartner.model.Address;
 import ntpartner.model.Partner;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
