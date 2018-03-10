@@ -6,7 +6,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "nexus3.marathon.l4lb.thisdcos.directory:5000/ntpartner/ntpartner-backend",
+      "image": "nexus3.marathon.l4lb.thisdcos.directory:5000/examples.cloud.ntpartner/ntpartner-backend",
       "forcePullImage": true,
       "network": "BRIDGE",
       "portMappings": [

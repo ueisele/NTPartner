@@ -3,7 +3,7 @@ version: '3'
 services:
 
   ntpartner-backend.setup-mysql:
-    image: ntpartner/ntpartner-backend.setup-mysql:${VERSION_APP}
+    image: examples.cloud.ntpartner/ntpartner-backend.setup-mysql:${VERSION_APP}
     labels:
       de.nt.cloud.group: ntpartner
       de.nt.cloud.project: ntpartner-backend
@@ -17,7 +17,7 @@ services:
       - rabbitmq
 
   ntpartner-backend:
-    image: ntpartner/ntpartner-backend:${VERSION_APP}
+    image: examples.cloud.ntpartner/ntpartner-backend:${VERSION_APP}
     labels:
       de.nt.cloud.group: ntpartner
       de.nt.cloud.project: ntpartner-backend

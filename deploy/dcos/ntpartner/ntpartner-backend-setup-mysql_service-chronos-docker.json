@@ -3,7 +3,7 @@
   "schedule": "R1//P",
   "container": {
     "type": "DOCKER",
-    "image": "nexus3.marathon.l4lb.thisdcos.directory:5000/ntpartner/ntpartner-backend.setup-mysql:latest",
+    "image": "nexus3.marathon.l4lb.thisdcos.directory:5000/examples.cloud.ntpartner/ntpartner-backend.setup-mysql:latest",
     "forcePullImage": true,
     "network": "BRIDGE"
   },
